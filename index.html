@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【EP7】多益600核心單字・打底特訓</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #f39c12; 
+            --blue: #3498db;
+            --success: #2ecc71; 
+            --error: #ff7675;   
+            --bg: #f4f7f9;
+            --grey: #7f8c8d;
+        }
+        body { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; background: var(--bg); margin: 0; padding: 5px; display: flex; justify-content: center; }
+        .container { background: white; width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; }
+        
+        .banner { width: 100%; height: auto; display: block; transition: 0.2s; }
+        .banner.compact { max-height: 50px; object-fit: cover; }
+
+        .content-padding { padding: 12px 18px; }
+
+        .intro-header h1 { font-size: 1.3rem; color: var(--primary); margin: 0 0 5px 0; }
+        .intro-header p { font-size: 0.9rem; color: #555; margin: 0; font-weight: bold; }
+
+        .header { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: bold; font-size: 0.85rem; color: var(--grey); }
+        .progress-container { width: 100%; background: #eee; height: 5px; border-radius: 3px; margin-bottom: 12px; }
+        .progress-bar { height: 100%; background: var(--blue); width: 0%; transition: 0.4s; }
+        
+        .question-box { min-height: 90px; margin-bottom: 12px; }
+        .type-tag { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 0.75rem; background: #e8f4fd; color: var(--blue); margin-bottom: 5px; font-weight: bold; }
+        .word { font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+        .q-text { font-size: 1.1rem; color: #333; line-height: 1.5; padding: 12px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #ddd; }
+
+        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        button { padding: 15px; border: none; border-radius: 10px; font-size: 1rem; cursor: pointer; font-weight: bold; color: white; box-shadow: 0 4px 0 rgba(0,0,0,0.1); }
+        .btn-true { background: var(--success); }
+        .btn-false { background: var(--error); }
+        .next-btn { width: 100%; background: var(--primary); margin-top: 10px; display: none; box-shadow: none; }
+        
+        .feedback { display: none; margin-top: 12px; padding: 10px; border-radius: 8px; font-size: 1rem; font-weight: bold; text-align: center; }
+        .correct-bg { background: #d4edda; color: #155724; }
+        .wrong-bg { background: #f8d7da; color: #721c24; }
+
+        /* 結果頁樣式 */
+        .result-screen { display: none; text-align: center; }
+        .final-score { font-size: 2.2rem; color: var(--blue); font-weight: bold; margin-bottom: 8px; }
+        
+        .history-container { background: #f8fafc; padding: 10px; border-radius: 8px; margin-bottom: 10px; text-align: left; border: 1px solid #edf2f7; }
+        .history-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .history-title { font-size: 0.85rem; font-weight: bold; color: var(--primary); }
+        
+        .clear-btn { 
+            font-size: 0.75rem; color: #e74c3c; cursor: pointer; background: #fff1f0; 
+            border: 1px solid #ffa39e; padding: 3px 8px; border-radius: 6px; 
+            transition: 0.2s; font-weight: bold;
+        }
+        .clear-btn:active { background: #ffccc7; }
+
+        .history-item { display: flex; justify-content: space-between; font-size: 0.8rem; color: #666; padding: 4px 0; border-bottom: 1px dashed #e2e8f0; }
+        
+        .review-container { text-align: left; margin-bottom: 12px; max-height: 140px; overflow-y: auto; border: 1px solid #eee; border-radius: 8px; padding: 5px; }
+        .review-item { padding: 5px; border-bottom: 1px solid #f1f1f1; font-size: 0.8rem; display: flex; align-items: flex-start; }
+        .review-icon { margin-right: 6px; flex-shrink: 0; }
+
+        /* 置中與按鈕樣式 */
+        .cta-button { 
+            display: block; width: 100%; padding: 14px; background: var(--secondary); color: white; 
+            text-decoration: none; border-radius: 30px; font-size: 1.1rem; font-weight: bold; 
+            margin: 15px 0 10px 0; box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+            text-align: center; box-sizing: border-box; 
+        }
+        
+        .retry-link { display: inline-block; color: var(--blue); text-decoration: none; font-size: 0.85rem; font-weight: bold; cursor: pointer; margin-bottom: 15px; }
+
+        .footer-upsell { 
+            font-size: 0.75rem; color: #999; line-height: 1.6; border-top: 1px solid #eee; 
+            padding-top: 15px; text-align: center; 
+        }
+        .shopee-link { color: var(--blue); font-weight: bold; text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="banner.jpg" id="main-banner" alt="EP7 打底特訓" class="banner"> 
+
+    <div class="content-padding">
+        <div id="intro-area" class="intro-header">
+            <h1>【EP7】核心單字・打底特訓</h1>
+            <p>🔥 直覺 3 秒挑戰。5 題快速上手。🔥</p>
+        </div>
+
+        <div id="quiz-section">
+            <div class="header">
+                <span id="q-count">題目 1 / 5</span>
+                <span id="score-count">得分: 0</span>
+            </div>
+            <div class="progress-container"><div class="progress-bar" id="progress"></div></div>
+            
+            <div class="question-box">
+                <div id="type-tag" class="type-tag">載入中</div>
+                <div id="word" class="word">Word</div>
+                <div id="content" class="q-text">載入中...</div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn-true" onclick="handleAnswer(true)">True 正確</button>
+                <button class="btn-false" onclick="handleAnswer(false)">False 錯誤</button>
+            </div>
+
+            <div id="feedback" class="feedback"></div>
+            <button id="next-btn" class="next-btn" onclick="nextQuestion()">下一題 →</button>
+        </div>
+
+        <div id="result-section" class="result-screen">
+            <div class="final-score" id="final-score">0 / 100</div>
+            
+            <div class="history-container">
+                <div class="history-header">
+                    <span class="history-title">📈 EP7 練習紀錄 (最近 5 次)</span>
+                    <button class="clear-btn" onclick="confirmClear()">清除紀錄</button>
+                </div>
+                <div id="history-list"></div>
+            </div>
+
+            <div class="review-container" id="review-list"></div>
+            
+            <div><span class="retry-link" onclick="initQuiz()">↺ 再練一次這組單字</span></div>
+
+            <a href="https://docs.google.com/forms/YOUR_LINK" class="cta-button" target="_blank">👉 前往：【EP7】實戰驗收</a>
+
+            <div class="footer-upsell">
+                💡 覺得這套模式有效？完整 16 集多益衝刺計畫已在蝦皮上架。<br>
+                <a href="https://shopee.tw/YOUR_LINK" class="shopee-link" target="_blank">點此前往蝦皮賣場看更多</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// EP7 單字資料庫 (No.151 - 175)
+const rawData = [
+    // 151. device
+    { type: "單字辨析", word: "device", show: "儀器、裝置", ans: true, feedback: "device 是「儀器、裝置」。" },
+    { type: "句型搭配", word: "device", show: "a medical ______ manufacturer / 填入：device", ans: true, feedback: "應填入 device (醫療儀器製造商)。" },
+
+    // 152. intended
+    { type: "單字辨析", word: "intended", show: "以...為對象的", ans: true, feedback: "intended 是「以...為對象的」。" },
+    { type: "句型搭配", word: "intended", show: "Who is the announcement ______ for? / 填入：brochure", ans: false, feedback: "應填入 intended (這則公告是以誰為對象？)。" },
+
+    // 153. brochure
+    { type: "單字辨析", word: "brochure", show: "小冊子", ans: true, feedback: "brochure 是「小冊子」。" },
+    { type: "句型搭配", word: "brochure", show: "a travel ______ / 填入：brochure", ans: true, feedback: "應填入 brochure (旅遊手冊)。" },
+
+    // 154. mail
+    { type: "單字辨析", word: "mail", show: "郵件、郵遞", ans: true, feedback: "mail 是「郵件、郵遞」。" },
+    { type: "句型搭配", word: "mail", show: "by express ______ / 填入：prefer", ans: false, feedback: "應填入 mail (用快遞郵寄)。" },
+
+    // 155. prefer
+    { type: "單字辨析", word: "prefer", show: "更喜歡", ans: true, feedback: "prefer 是「更喜歡」。" },
+    { type: "句型搭配", word: "prefer", show: "I ______ flexible working hours. / 填入：prefer", ans: true, feedback: "應填入 prefer (我更喜歡彈性的上班時間)。" },
+
+    // 156. response
+    { type: "單字辨析", word: "response", show: "回答、答覆", ans: true, feedback: "response 是「回答、答覆」。" },
+    { type: "句型搭配", word: "response", show: "I'm writing in ______ to your inquiry. / 填入：region", ans: false, feedback: "應填入 response (我正在回覆您的詢問)。" },
+
+    // 157. region
+    { type: "單字辨析", word: "region", show: "地區", ans: true, feedback: "region 是「地區」。" },
+    { type: "句型搭配", word: "region", show: "expand business in the southern ______ / 填入：region", ans: true, feedback: "應填入 region (拓展南部地區的業務)。" },
+
+    // 158. donation
+    { type: "單字辨析", word: "donation", show: "捐獻", ans: true, feedback: "donation 是「捐獻」。" },
+    { type: "句型搭配", word: "donation", show: "make a ______ to charity / 填入：quarter", ans: false, feedback: "應填入 donation (向慈善機構捐獻)。" },
+
+    // 159. quarter
+    { type: "單字辨析", word: "quarter", show: "季", ans: true, feedback: "quarter 是「季」。" },
+    { type: "句型搭配", word: "quarter", show: "the first ______ / 填入：quarter", ans: true, feedback: "應填入 quarter (第一季)。" },
+
+    // 160. agreement
+    { type: "單字辨析", word: "agreement", show: "協議、同意(書)", ans: true, feedback: "agreement 是「協議、同意(書)」。" },
+    { type: "句型搭配", word: "agreement", show: "sign a rental ______ / 填入：journal", ans: false, feedback: "應填入 agreement (簽訂租約)。" },
+
+    // 161. journal
+    { type: "單字辨析", word: "journal", show: "期刊", ans: true, feedback: "journal 是「期刊」。" },
+    { type: "句型搭配", word: "journal", show: "submit an article to a ______ / 填入：journal", ans: true, feedback: "應填入 journal (投稿到期刊)。" },
+
+    // 162. distribute
+    { type: "單字辨析", word: "distribute", show: "分配、分發", ans: true, feedback: "distribute 是「分配、分發」。" },
+    { type: "句型搭配", word: "distribute", show: "______ documents during the meeting / 填入：potential", ans: false, feedback: "應填入 distribute (會議中分發文件)。" },
+
+    // 163. potential
+    { type: "單字辨析", word: "potential", show: "潛在的", ans: true, feedback: "potential 是「潛在的」。" },
+    { type: "句型搭配", word: "potential", show: "______ customers online / 填入：potential", ans: true, feedback: "應填入 potential (線上潛在顧客)。" },
+
+    // 164. reschedule
+    { type: "單字辨析", word: "reschedule", show: "重新安排時間", ans: true, feedback: "reschedule 是「重新安排時間」。" },
+    { type: "句型搭配", word: "reschedule", show: "______ an appointment / 填入：renew", ans: false, feedback: "應填入 reschedule (重新安排預約時間)。" },
+
+    // 165. renew
+    { type: "單字辨析", word: "renew", show: "更新; 續期", ans: true, feedback: "renew 是「更新; 續期」。" },
+    { type: "句型搭配", word: "renew", show: "______ a contract / 填入：renew", ans: true, feedback: "應填入 renew (更新合約)。" },
+
+    // 166. warehouse
+    { type: "單字辨析", word: "warehouse", show: "倉庫", ans: true, feedback: "warehouse 是「倉庫」。" },
+    { type: "句型搭配", word: "warehouse", show: "ship from a ______ / 填入：refund", ans: false, feedback: "應填入 warehouse (從倉庫出貨)。" },
+
+    // 167. refund
+    { type: "單字辨析", word: "refund", show: "退款", ans: true, feedback: "refund 是「退款」。" },
+    { type: "句型搭配", word: "refund", show: "a full ______ within 30 days / 填入：refund", ans: true, feedback: "應填入 refund (30天內全額退款)。" },
+
+    // 168. advise
+    { type: "單字辨析", word: "advise", show: "勸告、忠告", ans: true, feedback: "advise 是「勸告、忠告」。" },
+    { type: "句型搭配", word: "advise", show: "What are customers ______d to do? / 填入：immediately", ans: false, feedback: "應填入 advised (產品回收後，建議顧客做什麼？)。" },
+
+    // 169. immediately
+    { type: "單字辨析", word: "immediately", show: "立即、馬上", ans: true, feedback: "immediately 是「立即、馬上」。" },
+    { type: "句型搭配", word: "immediately", show: "Please reply ______ / 填入：immediately", ans: true, feedback: "應填入 immediately (請立即回覆)。" },
+
+    // 170. council
+    { type: "單字辨析", word: "council", show: "議會", ans: true, feedback: "council 是「議會」。" },
+    { type: "句型搭配", word: "council", show: "the city ______ / 填入：broadcast", ans: false, feedback: "應填入 council (市議會)。" },
+
+    // 171. broadcast
+    { type: "單字辨析", word: "broadcast", show: "播放", ans: true, feedback: "broadcast 是「播放」。" },
+    { type: "句型搭配", word: "broadcast", show: "The news will be ______ tonight. / 填入：broadcast", ans: true, feedback: "應填入 broadcast (新聞將在今晚播出)。" },
+
+    // 172. responsible
+    { type: "單字辨析", word: "responsible", show: "負責(任)的", ans: true, feedback: "responsible 是「負責(任)的」。" },
+    { type: "句型搭配", word: "responsible", show: "Who is ______ for customer complaints? / 填入：avoid", ans: false, feedback: "應填入 responsible (誰負責處理顧客抱怨？)。" },
+
+    // 173. avoid
+    { type: "單字辨析", word: "avoid", show: "避免", ans: true, feedback: "avoid 是「避免」。" },
+    { type: "句型搭配", word: "avoid", show: "______ unnecessary costs / 填入：avoid", ans: true, feedback: "應填入 avoid (避免不必要的開銷)。" },
+
+    // 174. effective
+    { type: "單字辨析", word: "effective", show: "有效的;生效的", ans: true, feedback: "effective 是「有效的;生效的」。" },
+    { type: "句型搭配", word: "effective", show: "______ advertising campaigns / 填入：invitation", ans: false, feedback: "應填入 effective (有效的宣傳活動)。" },
+
+    // 175. invitation
+    { type: "單字辨析", word: "invitation", show: "邀請(函)", ans: true, feedback: "invitation 是「邀請(函)」。" },
+    { type: "句型搭配", word: "invitation", show: "send an ______ by e-mail / 填入：invitation", ans: true, feedback: "應填入 invitation (透過電子郵件寄出邀請函)。" }
+];
+
+let questions = [];
+let currentIndex = 0;
+let score = 0;
+let userHistoryList = []; 
+
+function initQuiz() {
+    const shuffled = [...rawData].sort(() => 0.5 - Math.random());
+    questions = shuffled.slice(0, 5);
+    currentIndex = 0; score = 0; userHistoryList = [];
+    document.getElementById('main-banner').classList.remove('compact');
+    document.getElementById('intro-area').style.display = 'block';
+    document.getElementById('quiz-section').style.display = 'block';
+    document.getElementById('result-section').style.display = 'none';
+    document.getElementById('score-count').innerText = "得分: 0";
+    loadQuestion();
+}
+
+function loadQuestion() {
+    const q = questions[currentIndex];
+    document.getElementById('q-count').innerText = `題目 ${currentIndex + 1} / 5`;
+    document.getElementById('progress').style.width = `${((currentIndex + 1) / 5) * 100}%`;
+    document.getElementById('type-tag').innerText = q.type;
+    const wordEl = document.getElementById('word');
+    if (q.type === "句型搭配") {
+        wordEl.style.display = 'none';
+        document.getElementById('content').innerText = q.show;
+    } else {
+        wordEl.style.display = 'block';
+        wordEl.innerText = q.word;
+        document.getElementById('content').innerText = `中文意思：${q.show}`;
+    }
+    document.getElementById('feedback').style.display = 'none';
+    document.getElementById('next-btn').style.display = 'none';
+    document.querySelectorAll('.btn-group button').forEach(b => b.disabled = false);
+}
+
+function handleAnswer(userAns) {
+    const q = questions[currentIndex];
+    const feedback = document.getElementById('feedback');
+    document.querySelectorAll('.btn-group button').forEach(b => b.disabled = true);
+    feedback.style.display = 'block';
+    const isCorrect = (userAns === q.ans);
+    userHistoryList.push({ word: q.word, isCorrect: isCorrect, feedback: q.feedback });
+    if (isCorrect) {
+        score += 20;
+        feedback.innerText = "✅ " + q.feedback;
+        feedback.className = "feedback correct-bg";
+    } else {
+        feedback.innerText = "❌ " + q.feedback;
+        feedback.className = "feedback wrong-bg";
+    }
+    document.getElementById('score-count').innerText = `得分: ${Math.round(score)}`;
+    document.getElementById('next-btn').style.display = 'block';
+}
+
+function nextQuestion() {
+    currentIndex++;
+    if (currentIndex < 5) loadQuestion(); else showResult();
+}
+
+function showResult() {
+    document.getElementById('main-banner').classList.add('compact');
+    document.getElementById('intro-area').style.display = 'none';
+    document.getElementById('quiz-section').style.display = 'none';
+    document.getElementById('result-section').style.display = 'block';
+    document.getElementById('final-score').innerText = Math.round(score) + " / 100";
+    
+    const now = new Date();
+    const timeStr = `${now.getMonth() + 1}/${now.getDate()} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+
+    // 使用 toeic_history_ep7 (注意：EP7 專用鍵值)
+    let history = JSON.parse(localStorage.getItem('toeic_history_ep7')) || [];
+    history.unshift({ score: score, time: timeStr });
+    if(history.length > 5) history.pop();
+    localStorage.setItem('toeic_history_ep7', JSON.stringify(history));
+    renderHistoryList(history);
+
+    document.getElementById('review-list').innerHTML = userHistoryList.map(item => `
+        <div class="review-item">
+            <span class="review-icon">${item.isCorrect ? '✅' : '❌'}</span>
+            <div><b>${item.word || ''}</b> ${item.feedback}</div>
+        </div>
+    `).join('');
+}
+
+function renderHistoryList(history) {
+    const listEl = document.getElementById('history-list');
+    if (!history || history.length === 0) {
+        listEl.innerHTML = '<div style="font-size:0.8rem; color:#999; padding: 5px 0;">尚無紀錄</div>';
+        return;
+    }
+    listEl.innerHTML = history.map(item => `
+        <div class="history-item">
+            <span>時間：${item.time}</span>
+            <b style="color:var(--blue)">${Math.round(item.score)} 分</b>
+        </div>
+    `).join('');
+}
+
+function confirmClear() {
+    if (confirm("確定要清除所有練習紀錄嗎？")) {
+        localStorage.removeItem('toeic_history_ep7');
+        renderHistoryList([]);
+    }
+}
+
+initQuiz();
+</script>
+</body>
+</html>
